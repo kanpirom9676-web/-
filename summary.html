@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สรุปยอด | สำนักพิมพ์อมตะ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">ระบบติดตามคำสั่งซื้ออมตะ<small>สำนักพิมพ์อมตะ</small></div>
+      <nav class="menu">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html" class="active">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>สรุปยอด</h1>
+    <p class="subtitle">ภาพรวมยอดขายและยอดค้างชำระ</p>
+    <section class="stat-grid">
+      <div class="card stat">
+        <div class="stat-label">ยอดขายรวม</div>
+        <div class="stat-value" id="total-sales">-</div>
+        <div class="stat-note" id="total-sales-note"></div>
+      </div>
+      <div class="card stat stat-alert">
+        <div class="stat-label">ยอดค้างชำระรวม</div>
+        <div class="stat-value" id="total-unpaid">-</div>
+        <div class="stat-note" id="total-unpaid-note"></div>
+      </div>
+      <div class="card stat">
+        <div class="stat-label">คำสั่งซื้อทั้งหมด</div>
+        <div class="stat-value" id="total-orders">-</div>
+        <div class="stat-note">รายการ</div>
+      </div>
+    </section>
+
+    <h2 class="section-title">จำนวนคำสั่งซื้อแยกตามสถานะ</h2>
+    <section class="stat-grid" id="status-cards"></section>
+
+    <h2 class="section-title">ร้านที่มียอดสั่งซื้อสูงสุด 5 อันดับ</h2>
+    <div class="card">
+      <p class="muted chart-note">ยอดสั่งซื้อรวมทุกสถานะ เอาเมาส์ชี้ที่แท่งเพื่อดูรายละเอียด</p>
+      <div class="bar-chart" id="top-shops"></div>
+    </div>
+  </main>
+
+  <footer class="footer">สำนักพิมพ์อมตะ</footer>
+  <div class="tooltip" id="tooltip" hidden></div>
+
+  <script src="data.js"></script>
+  <script src="format.js"></script>
+  <script src="summary.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>รายการคำสั่งซื้อ | สำนักพิมพ์อมตะ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">ระบบติดตามคำสั่งซื้ออมตะ<small>สำนักพิมพ์อมตะ</small></div>
+      <nav class="menu">
+        <a href="index.html" class="active">รายการคำสั่งซื้อ</a>
+        <a href="add.html">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>รายการคำสั่งซื้อ</h1>
+    <p class="subtitle">คำสั่งซื้อหนังสือจากร้านค้าทั้งหมด <span id="order-count"></span></p>
+    <div id="notice" class="notice" hidden></div>
+
+    <div class="toolbar">
+      <input type="search" id="search" class="search-input" placeholder="ค้นหาชื่อร้าน หรือชื่อหนังสือ" aria-label="ค้นหาชื่อร้าน หรือชื่อหนังสือ">
+      <div class="filters" id="status-filters" role="group" aria-label="กรองตามสถานะ">
+        <button type="button" class="filter-btn active" data-status="all">ทั้งหมด <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-status="pending">รอส่ง <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-status="shipped">ส่งแล้ว <span class="filter-count"></span></button>
+        <button type="button" class="filter-btn" data-status="paid">ชำระแล้ว <span class="filter-count"></span></button>
+      </div>
+    </div>
+
+    <div class="card table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>เลขที่</th>
+            <th>วันที่สั่ง</th>
+            <th>ร้าน</th>
+            <th>หนังสือ</th>
+            <th class="num">จำนวน</th>
+            <th class="num">ยอดเงิน</th>
+            <th>สถานะ</th>
+            <th>เปลี่ยนสถานะ</th>
+          </tr>
+        </thead>
+        <tbody id="order-rows">
+          <tr><td colspan="8" class="empty">กำลังโหลดข้อมูล</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">สำนักพิมพ์อมตะ</footer>
+
+  <script src="data.js"></script>
+  <script src="format.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

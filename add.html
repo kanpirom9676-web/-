@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เพิ่มคำสั่งซื้อ | สำนักพิมพ์อมตะ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">ระบบติดตามคำสั่งซื้ออมตะ<small>สำนักพิมพ์อมตะ</small></div>
+      <nav class="menu">
+        <a href="index.html">รายการคำสั่งซื้อ</a>
+        <a href="add.html" class="active">เพิ่มคำสั่งซื้อ</a>
+        <a href="summary.html">สรุปยอด</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>เพิ่มคำสั่งซื้อ</h1>
+    <p class="subtitle">บันทึกคำสั่งซื้อใหม่จากร้านค้า</p>
+    <div class="card form">
+      <form id="order-form" novalidate>
+        <div id="form-alert" class="form-alert" hidden></div>
+
+        <div class="field" data-field="shop">
+          <label for="shop">ร้าน</label>
+          <select id="shop">
+            <option value="">-- เลือกร้าน --</option>
+          </select>
+        </div>
+
+        <div class="field" data-field="book">
+          <label for="book">หนังสือ</label>
+          <select id="book">
+            <option value="">-- เลือกหนังสือ --</option>
+          </select>
+          <div class="hint" id="price-hint"></div>
+        </div>
+
+        <div class="field" data-field="quantity">
+          <label for="quantity">จำนวน (เล่ม)</label>
+          <input type="number" id="quantity" min="1" step="1" inputmode="numeric" placeholder="เช่น 10">
+        </div>
+
+        <div class="field" data-field="orderDate">
+          <label for="orderDate">วันที่สั่ง</label>
+          <input type="date" id="orderDate">
+          <div class="hint" id="date-hint"></div>
+        </div>
+
+        <div class="total-box">
+          <span>ยอดเงินรวม</span>
+          <span class="amount" id="total">฿0.00</span>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">บันทึก</button>
+          <a href="index.html" class="btn btn-secondary">ยกเลิก</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">สำนักพิมพ์อมตะ</footer>
+
+  <script src="data.js"></script>
+  <script src="format.js"></script>
+  <script src="add.js"></script>
+</body>
+</html>
